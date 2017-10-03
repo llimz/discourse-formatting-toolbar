@@ -17,6 +17,15 @@ function initializePlugin(api)
     
     api.onToolbarCreate(toolbar => {
         toolbar.addButton({
+          id: "strikethrough_ui_button",
+          group: "fontStyles",
+          icon: "strikethrough",
+          perform: e => e.applySurround('[s]', '[/s]', 'strikethrough_ui_default_text')
+        });
+    });
+    
+    api.onToolbarCreate(toolbar => {
+        toolbar.addButton({
           id: "color_ui_button",
           group: "fontStyles",
           icon: "paint-brush",
